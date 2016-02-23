@@ -4,7 +4,7 @@ This was one of the homework exercises during my time at General Assembly's Web 
 
 ## Task
 
-Using the Twitter API, build a backend that stores a limited number of tweets in the database seed file so that it can be used to show clients where internet access is unavailable. The bonus task was to create a frontend that showed fish with tweets.
+Using the Twitter API, build a backend that seeds the database with a limited number of tweets so that it can be shown to clients regardless of internet availability. The bonus task was to create a frontend that showed fish with tweets.
 
 ## Solution
 
@@ -55,3 +55,7 @@ Then run `rails s` to start the server.
 
 You can also do `rake twitter:clear` to delete all previous tweets in the database if you want to start fresh.
 
+## Bugs
+
+* sometimes the text overflows the speech bubble
+* the fish don't come back after the first lap if you seed the database with less than 6 tweets
