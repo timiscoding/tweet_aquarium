@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tweeteater</title>
+  <% if params[:controller] == 'fishies' && params[:action] == 'fishTweets' %>
+    <%= stylesheet_link_tag 'fishies', 'data-turbolinks-track' => true %>
+  <% end %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

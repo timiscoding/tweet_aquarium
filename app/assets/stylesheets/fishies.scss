@@ -1,0 +1,44 @@
+// Place all the styles related to the Fishies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: url('http://wallpapercave.com/wp/9zBc1pX.jpg');
+  background-size: cover;
+  //display: flex;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+  color: yellow;
+  font-family: arial;
+  -webkit-text-stroke: 1px black;
+  text-align: center;
+}
+
+div.fishContainer {
+  position: absolute;
+  //border: 1px solid green;
+  display: inline-block;
+}
+
+img.fish {
+  //background: white;
+  display: block;
+  margin: auto;
+  //position: absolute;
+  //left: 100px;
+  //border: 1px solid red;
+}
+
+div.tweet {
+  background: white;
+  padding: 0.5em;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 1em;
+  width: 400px;
+}

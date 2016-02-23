@@ -1,0 +1,2 @@
+module FishiesHelper
+end

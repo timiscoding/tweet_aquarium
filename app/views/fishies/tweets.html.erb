@@ -1,0 +1,12 @@
+
+
+<table>
+  <th>Id</th>
+  <th>Tweet</th>
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.id %></td>
+    <td><%= tweet.post %></td>
+  </tr>
+<% end %>
+</table>
