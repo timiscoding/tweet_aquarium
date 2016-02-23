@@ -19,4 +19,35 @@ namespace :twitter do
       Tweet.create :post => tweet.full_text
     end
   end
+
+  desc "get tweets for a user"
+  task :from, [:user, :limit] => :environment do |t, args|
+    @limit = args[:limit].to_i
+
+    def collect_with_max_id(collection=[], max_id=nil, &block)
+      response = yield(max_id)
+      collection += response
+
+      @limit -= collection.count
+      if @limit > 0 then # haven't got enough tweets yet
+        collect_with_max_id(collection, response.last.id - 1)
+      else
+        collection.flatten
+      end
+    end
+
+    # twitter gem api only gets 20 at a time so we need to keep
+    # calling it until we get the amount of tweets we want
+    def get_all_tweets(user)
+      collect_with_max_id do |max_id|
+        options = {count: @limit, include_rts: true}
+        options[:max_id] = max_id unless max_id.nil?
+        $client.user_timeline(user, options)
+      end
+    end
+
+    get_all_tweets(args[:user]).each do |tweet|
+      Tweet.create :post => tweet.full_text
+    end
+  end
 end
