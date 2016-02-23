@@ -46,8 +46,9 @@ namespace :twitter do
       end
     end
 
-    get_all_tweets(args[:user]).each do |tweet|
+    get_all_tweets(args[:user]).each_with_index do |tweet,i|
       Tweet.create :post => tweet.full_text
+      # puts i, tweet.full_text
     end
   end
 end

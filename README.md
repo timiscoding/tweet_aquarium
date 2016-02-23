@@ -57,5 +57,6 @@ You can also do `rake twitter:clear` to delete all previous tweets in the databa
 
 ## Bugs
 
+* 1 fish position may appear below viewport
 * sometimes the text overflows the speech bubble
 * the fish don't come back after the first lap if you seed the database with less than 6 tweets
